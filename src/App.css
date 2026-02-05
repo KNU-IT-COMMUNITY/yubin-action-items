@@ -1,42 +1,239 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 48px 24px;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.iconButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.iconButton img {
+  width: 20px;
+  height: 20px;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.panelMeta {
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 14px;
+}
+
+.calendarMock {
+  margin-top: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  padding: 16px;
+  width: 260px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.calendarMockLabel {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.calendarMockDate {
+  margin: 8px 0 0;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.calendarCard {
+  margin-top: 18px;
+  width: 280px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+
+.calendarCardHeadline {
+  margin: 8px 0 10px;
+  font-size: 40px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.calendarDivider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  margin: 12px -16px 10px;
+}
+
+/* react-calendar 커스텀 (기본 CSS를 안 쓰고, 우리 스타일로 최소 구현) */
+.myCalendar {
+  border: 0 !important;
+  width: 100%;
+  font-family: inherit;
+}
+
+.myCalendar .react-calendar__navigation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 6px;
+  flex-wrap: nowrap;
+}
+
+.myCalendar .react-calendar__navigation__label {
+  order: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  justify-self: start;
+  padding: 8px 6px;
+  font-weight: 700;
+  border: 0;
+  background: transparent;
+}
+
+.myCalendar .react-calendar__navigation__label::after {
+  content: '▾';
+  margin-left: 8px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.myCalendar .react-calendar__navigation__prev-button {
+  order: 2;
+  flex: 0 0 auto;
+}
+
+.myCalendar .react-calendar__navigation__next-button {
+  order: 3;
+  flex: 0 0 auto;
+}
+
+.myCalendar .react-calendar__navigation button {
+  border: 0;
+  background: transparent;
+  width: 44px;
+  height: 36px;
+  border-radius: 10px;
+  padding: 0; /* 전역 button 패딩 영향 제거 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+}
+
+.myCalendar .react-calendar__navigation button:enabled:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.myCalendar .calendarNavIcon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.myCalendar .react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 4px;
+}
+
+.myCalendar .react-calendar__month-view__weekdays__weekday {
+  padding: 6px 0;
+}
+
+.myCalendar .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+}
+
+.myCalendar .react-calendar__month-view__days {
+  gap: 2px;
+}
+
+.myCalendar .react-calendar__tile {
+  height: 44px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  font-weight: 650;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.myCalendar .react-calendar__tile:enabled:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* 선택된 날짜 = 보라색 fill 원 */
+.myCalendar .react-calendar__tile.isSelected {
+  background: #6c4ae4;
+  color: #fff;
+}
+
+/* 오늘 = 보라색 outline 원(스크린샷의 동그란 테두리 느낌) */
+.myCalendar .react-calendar__tile.isToday {
+  outline: 2px solid #6c4ae4;
+  outline-offset: -2px;
+}
+
+.myCalendar .react-calendar__tile--active {
+  background: transparent;
+}
+
+.myCalendar .react-calendar__tile--now {
+  background: transparent;
+}
+
+
+.pageHeaderCentered {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 16px;
+}
+
+.pageTitleCentered {
   text-align: center;
+  margin: 0;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/* responsive rules moved into component styles (Emotion) */
