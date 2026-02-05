@@ -1,16 +1,18 @@
-# React + Vite
+날짜별 투두 리스트를 관리하는 작은 웹입니다!<br />
+저는 노트 다이어리를 쓸 때 할 일들을 마구 적어놓고 시간대 별로 분배를 하는데요, 이러한 Todo-List를 웹으로 구현하면 좋을 것 같다고 생각했습니다.<br />
+메인 페이지에서 오늘 투두를 확인하고, 캘린더에서 날짜를 선택하면 해당 날짜의 투두를 작성할 수 있는 페이지로 이동합니다.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 주요 기능
+- 메인 페이지: 오늘 투두 리스트 요약 표시
+- 캘린더 날짜 선택 → 해당 날짜의 Todo-List를 입력할 수 있는 페이지로 이동
+- 투두 페이지: 투두 플로팅 생성 + 타임라인 드래그 배치
+- 투두 수정/삭제(hover 시 버튼 표시)
+- localStorage에 날짜별로 저장
 
-Currently, two official plugins are available:
+## 기술 스택
+- React + TypeScript + Vite
+- Emotion (css prop)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 디자인
+https://www.figma.com/design/7TIy7qPE8HuVdnYoCHNosJ/%EC%A0%9C%EB%AA%A9-%EC%97%86%EC%9D%8C?node-id=0-1&t=kMjrOGOIa0UZjAaC-1
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
